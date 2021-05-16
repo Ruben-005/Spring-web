@@ -11,6 +11,8 @@
 
 <form:form  action="actuProductos" modelAttribute="productos">
 
+	<form:hidden path="idProductos"/>
+
 	Nombre<form:input path="nombreProducto"/>
 	Presio<form:input path="Precio"/>
 	Seccion<form:input path="Seccion"/>

@@ -55,7 +55,7 @@ public class Controlador {
 		prod.setPrecio(precio);
 		prod.setSeccion(seccion);
 	
-		System.out.println(prod.toString());
+		
 		modelo.addAttribute("productos", prod);
 		
 		return "actualizarProductos";
