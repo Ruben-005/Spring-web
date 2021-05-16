@@ -31,8 +31,7 @@ public class Controlador {
 
 	@RequestMapping("/muestraFormularioInsertar")
 	public String mustraFormularioInsertar(Model modelo) {
-		Producto p = new Producto();
-		
+		Producto p = new Producto();	
 		modelo.addAttribute("producto", p);
 		
 		return "FormularioInsertar";

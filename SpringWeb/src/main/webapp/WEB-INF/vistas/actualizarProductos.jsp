@@ -6,16 +6,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/Recursos/estilos/estilosProductos.css">
 </head>
 <body>
 
-<form:form  action="actuProductos" modelAttribute="productos">
+<form:form class="box"  action="actuProductos" modelAttribute="productos">
 
 	<form:hidden path="idProductos"/>
-
-	Nombre<form:input path="nombreProducto"/>
-	Presio<form:input path="Precio"/>
-	Seccion<form:input path="Seccion"/>
+	<h1>Actualiza</h1>
+	<form:input path="nombreProducto" placeholder="Nombre"/>
+	<form:input path="Precio" placeholder="Precio"/>
+	<form:input path="Seccion" placeholder="Seccion"/>
 	
 	<button type="submit">Enviar</button>
 
