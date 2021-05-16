@@ -1,0 +1,26 @@
+@charset "ISO-8859-1";
+
+table{
+	float:left;
+}
+
+table .titulo{
+	background-color: blue;
+	color: white;
+}
+
+table .items{
+	background-color: red;
+	color: white;
+}
+
+table .link{
+	text-decoration: none;
+	border: 1px solid;
+}
+
+table .link:hover{
+	text-decoration: underline;
+	color:red;
+	border: 1px solid;
+}
