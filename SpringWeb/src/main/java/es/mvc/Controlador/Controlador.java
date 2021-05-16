@@ -46,12 +46,24 @@ public class Controlador {
 
 	}
 	
-	@RequestMapping("/actualizarProductos")
-	public String ActualizarUsuario(@RequestParam("id") String id, Model modelo) {
+	@RequestMapping("/cargarProductos")
+	public String ActualizarUsuario(@RequestParam("id") String id,@RequestParam("nombre") String nombre,
+									@RequestParam("precio") double precio,	@RequestParam("seccion") String seccion,Model modelo) {
 		Producto prod  = new Producto();
 		prod.setIdProductos(id);
-		modelo.addAttribute("producto", prod);
+		prod.setNombreProducto(nombre);
+		prod.setPrecio(precio);
+		prod.setSeccion(seccion);
+	
+		System.out.println(prod.toString());
+		modelo.addAttribute("productos", prod);
 		
 		return "actualizarProductos";
+	}
+	
+	@RequestMapping("/actuProductos")
+	public String acutualizarProductos(@ModelAttribute Producto prod, Model modelo) {
+		p.ActualizarProductos(prod);
+		return obtenerProductos(modelo);
 	}
 }

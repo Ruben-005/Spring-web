@@ -104,5 +104,27 @@ public class ControladorProductos implements Productos{
 		}
 		
 	}
+	
+	@Override
+	public void ActualizarProductos(Producto prod) {
+		// TODO Auto-generated method stub
+		sql = "UPDATE productos set nombreProducto = ?, Precio = ?, Seccion = ? where idProducto = ?";
+		try {
+			PreparedStatement ps  = con.prepareStatement(sql);
+			ps.setString(1, prod.getNombreProducto());
+			ps.setDouble(2, prod.getPrecio());
+			ps.setString(3, prod.getSeccion());
+			
+			ps.setString(4, prod.getIdProductos());
+			
+			ps.executeUpdate();
+			
+			System.out.println(prod.toString());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 
 }

@@ -8,5 +8,6 @@ public interface Productos {
 
 	public ArrayList<Producto> getProductos();
 	public void InsertarProductos(Producto p);
+	void ActualizarProductos(Producto prod);
 	
 }
