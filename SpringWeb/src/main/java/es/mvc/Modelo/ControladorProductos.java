@@ -2,6 +2,7 @@ package es.mvc.Modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -86,8 +87,21 @@ public class ControladorProductos implements Productos{
 	}
 
 	@Override
-	public void InsertarProductos(Productos prod) {
+	public void InsertarProductos(Producto prod) {
 		// TODO Auto-generated method stub
+		sql = "insert into productos(idProducto, nombreProducto, Precio, Seccion) value (?,?,?,?)";
+		try {
+			PreparedStatement ps  = con.prepareStatement(sql);
+			ps.setString(1, prod.getIdProductos());
+			ps.setString(2, prod.getNombreProducto());
+			ps.setDouble(3, prod.getPrecio());
+			ps.setString(4, prod.getSeccion());
+			
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

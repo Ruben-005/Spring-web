@@ -21,7 +21,8 @@ public class Controlador {
 	public Productos p;
 
 	@RequestMapping
-	public String obtenerProductos(Model modelo) {
+	public String obtenerProductos(Model modelo ) {
+		
 		modelo.addAttribute("productos", p.getProductos());
 
 		return "ObtenerProductos";
@@ -29,14 +30,19 @@ public class Controlador {
 
 	@RequestMapping("/muestraFormularioInsertar")
 	public String mustraFormularioInsertar(Model modelo) {
-
+		Producto p = new Producto();
+		
+		modelo.addAttribute("producto", p);
+		
 		return "FormularioInsertar";
 	}
 
 	@RequestMapping("/insertarProductos")
 	public String insertarProd(@ModelAttribute Producto prod, Model modelo) {
-		p.InsertarProductos(p);
-
+		p.InsertarProductos(prod);
+		
+		System.out.println(p.toString());
+		
 		return obtenerProductos(modelo);
 
 	}
