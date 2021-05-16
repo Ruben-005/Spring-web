@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import es.mvc.Modelo.Producto;
 import es.mvc.interfases.Productos;
@@ -41,9 +42,16 @@ public class Controlador {
 	public String insertarProd(@ModelAttribute Producto prod, Model modelo) {
 		p.InsertarProductos(prod);
 		
-		System.out.println(p.toString());
-		
 		return obtenerProductos(modelo);
 
+	}
+	
+	@RequestMapping("/actualizarProductos")
+	public String ActualizarUsuario(@RequestParam("id") String id, Model modelo) {
+		Producto prod  = new Producto();
+		prod.setIdProductos(id);
+		modelo.addAttribute("producto", prod);
+		
+		return "actualizarProductos";
 	}
 }

@@ -21,11 +21,16 @@
 	
 	<c:forEach var="pr" items="${productos}">
 	
+	<c:url var="p" value="actualizarProductos">
+		<c:param name="id" value="${pr.idProductos }"></c:param>
+	</c:url>
+
 	<tr>
 		<td>${pr.idProductos}</td>
 		<td>${pr.nombreProducto}</td>
 		<td>${pr.precio}</td>
 		<td>${pr.seccion}</td>
+		<td><a href="${p}">Actulizar</a></td>
 	</tr>	
 	
 	</c:forEach>
