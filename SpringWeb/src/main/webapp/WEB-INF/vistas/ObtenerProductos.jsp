@@ -27,13 +27,20 @@
 		<c:param name="precio" value="${pr.precio }"/>
 		<c:param name="seccion" value="${pr.seccion}"/>
 	</c:url>
+	
+	<c:url var="d" value="eliminarProductos">
+		<c:param name="id" value="${pr.idProductos }"/>
+	</c:url>
 
 	<tr>
 		<td>${pr.idProductos}</td>
 		<td>${pr.nombreProducto}</td>
 		<td>${pr.precio}</td>
 		<td>${pr.seccion}</td>
-		<td><a href="${p}">Actulizar</a></td>
+		<td>
+		<a href="${p}">Actulizar</a>
+		<a href="${d}">Eliminar</a>
+		</td>
 	</tr>	
 	
 	</c:forEach>

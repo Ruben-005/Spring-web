@@ -119,12 +119,25 @@ public class ControladorProductos implements Productos{
 			
 			ps.executeUpdate();
 			
-			System.out.println(prod.toString());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+	}
+
+	@Override
+	public void eliminarProductos(String id) {
+		// TODO Auto-generated method stub
+		sql = "delete from productos where idProducto = ?";
+		try {
+			PreparedStatement ps  = con.prepareStatement(sql);
+			ps.setString(1, id);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

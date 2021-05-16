@@ -66,4 +66,11 @@ public class Controlador {
 		p.ActualizarProductos(prod);
 		return obtenerProductos(modelo);
 	}
+	
+	@RequestMapping("/eliminarProductos")
+	public String eliminarProducto(@RequestParam String id,Model modelo) {
+		p.eliminarProductos(id);
+		
+		return obtenerProductos(modelo);
+	}
 }
